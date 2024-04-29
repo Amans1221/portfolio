@@ -1,0 +1,43 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+.heading-section .subheading {
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: black;
+    color: #b1b493;
+    letter-spacing: 3px;
+}
+.heading-section h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+.para{
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 21px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #999999;
+}
