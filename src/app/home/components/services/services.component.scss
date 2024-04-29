@@ -5,15 +5,7 @@
     margin-right: auto;
     margin-left: auto;
 }
-.row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
+
 
 .justify-content-center {
     -webkit-box-pack: center !important;
@@ -40,4 +32,9 @@
     line-height: 1.8;
     font-weight: 400;
     color: #999999;
+}
+.card-title{
+    text-align: center;
+    margin-top: -23px;
+    
 }
