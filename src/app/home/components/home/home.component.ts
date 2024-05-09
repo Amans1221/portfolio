@@ -1,32 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-
+  animations: [
+    trigger('countAnimation', [
+      state('start', style({
+        opacity: 1,
+        transform: 'scale(1)'
+      })),
+      state('end', style({
+        opacity: 0,
+        transform: 'scale(1.5)'
+      })),
+      transition('start => end', [
+        animate('1s')
+      ])
+    ])
+  ]
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent implements AfterViewInit {
   faCoffee = faCoffee;
-
-
   currentSlideIndex = 0;
+  currentCount: number = 0;
+  currentCount1: number = 0;
+  currentCount2: number = 0;
+  currentCount3: number = 0;
+  counterAnimationState: string = 'start';
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     // Auto slide the carousel every 8 seconds
     setInterval(() => {
       this.nextSlide();
     }, 8000);
 
-    // Call animateCounters after DOM content is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      this.animateCounters();
-    });
+    // Call animateCounters after view initialization
+    this.startCounterAnimation();
   }
 
   nextSlide(): void {
@@ -47,26 +60,51 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+  startCounterAnimation(): void {
+    // Set the final count
+    const finalCount = 5;
+    const finalCount1 = 50;
+    const finalCount2 = 100;
+    const finalCount3 = 150;
 
-  animateCounters(): void {
-    const counters = document.querySelectorAll('.number');
 
-    counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute('data-number') || '0', 10);
-      const updateCount = () => {
-        const count = +(counter as HTMLElement).innerText;
+    // Calculate increment value based on final count and animation duration
+    const increment = finalCount / 60; // Assuming 60 frames per second
+    const increment1 = finalCount1 / 60; // Assuming 60 frames per second
+    const increment2 = finalCount2 / 60; // Assuming 60 frames per second
+    const increment3 = finalCount3 / 60; // Assuming 60 frames per second
 
-        const inc = target / 200;
 
-        if (count < target) {
-          (counter as HTMLElement).innerText = Math.ceil(count + inc).toString();
-          setTimeout(updateCount, 20);
-        } else {
-          (counter as HTMLElement).innerText = target.toString();
-        }
-      };
+    // Start counting animation
+    const timer = setInterval(() => {
+      this.currentCount += increment;
+      this.currentCount1 += increment1;
+      this.currentCount2 += increment2;
+      this.currentCount3 += increment3;
 
-      updateCount();
-    });
+
+      // End animation when final count is reached
+      if (this.currentCount >= finalCount) {
+        clearInterval(timer);
+        this.currentCount = finalCount;
+        this.counterAnimationState = 'end';
+      }
+      if (this.currentCount1 >= finalCount1) {
+        clearInterval(timer);
+        this.currentCount1 = finalCount1;
+        this.counterAnimationState = 'end';
+      }
+      if (this.currentCount2 >= finalCount2) {
+        clearInterval(timer);
+        this.currentCount2 = finalCount2;
+        this.counterAnimationState = 'end';
+      }
+      if (this.currentCount3 >= finalCount3) {
+        clearInterval(timer);
+        this.currentCount3 = finalCount3;
+        this.counterAnimationState = 'end';
+      }
+    }, 2000 / 60); // 60 frames per second
   }
+  
 }

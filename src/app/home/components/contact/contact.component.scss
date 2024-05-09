@@ -1,0 +1,71 @@
+.heroicon{
+    border: 1px solid #b1b493;
+    border-radius: 50%;
+    top: -15px;
+    position: relative;
+    background: #b1b493;
+    color: white;
+    height: 45px;
+    padding: 7px;
+}
+@media (max-width: 767.98px) {
+    .dbox {
+        margin-bottom: 25px !important;
+        padding: 0 20px;
+    }
+}
+.dbox {
+    width: 100%;
+    margin-bottom: 0px;
+}
+.dbox .text {
+    width: calc(100% - 50px);
+    padding-left: 15px;
+}
+.contact-section .contact-form .form-control {
+    height: 36px;
+    background: #fff;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 2px solid #b1b493;
+}
+.contact-section .contact-form .form-control {
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+.form-control {
+    height: 52px !important;
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 18px;
+    border-radius: 5px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #b1b493;
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+.p-4 {
+    padding: 1.5rem !important;
+}

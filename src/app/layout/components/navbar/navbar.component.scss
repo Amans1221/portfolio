@@ -27,3 +27,23 @@
     font-size: 16px;
     letter-spacing: .1em;
 }
+
+.navbar {
+    position: relative; /* or 'absolute', depending on your layout */
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+    /* Default styles */
+    background-color: transparent;
+    color: black; /* Default text color */
+  }
+  
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Add any other fixed position styles you need */
+    background-color: white; /* Fixed navbar background color */
+    color: black; /* Fixed navbar text color */
+  }
+  
